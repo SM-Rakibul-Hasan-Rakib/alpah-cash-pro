@@ -12,6 +12,13 @@
 
 function contiuneGame() {
   // step-1: generate a random alphbaet
+  const alphbaet = getRandomAlphbate();
+  console.log("your random", alphbaet);
+
+  // set randomly generate alphbet to the screen (show in skin)
+
+  const currentAlphbetElement = document.getElementById("current-alphabet");
+  currentAlphbetElement.innerText = alphbaet;
 }
 
 function play() {
