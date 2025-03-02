@@ -17,6 +17,19 @@ function handleKeyboardKeyUpEvent(event) {
   const currentAlphabet = currentAlphabetElement.innerText;
   const expectedAlphabet = currentAlphabet.toLocaleLowerCase();
   console.log(playerPressed, currentAlphabet);
+
+  // check matched right or not
+  if (playerPressed === expectedAlphabet) {
+    console.log("you get a point");
+    console.log("you have pressed correctly", expectedAlphabet);
+    // update-score
+
+    // start new round
+    removeBackgroundColorById(expectedAlphabet);
+    contiuneGame();
+  } else {
+    console.log("you missed. you lost a life");
+  }
 }
 // capture keyboard key pressed
 document.addEventListener("keyup", handleKeyboardKeyUpEvent);
@@ -25,7 +38,7 @@ function contiuneGame() {
   // step-1: generate a random alphbaet
   const alphbaet = getRandomAlphbate();
 
-  console.log("your random", alphbaet);
+  // console.log("your random", alphbaet);
 
   // set randomly generate alphbet to the screen (show in skin)
 
