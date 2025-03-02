@@ -24,28 +24,28 @@ function handleKeyboardKeyUpEvent(event) {
     console.log("you have pressed correctly", expectedAlphabet);
     // update-score
     // 1. get the current score
-    const currentScoreElement = document.getElementById("current-score");
-    const currentScoreText = currentScoreElement.innerText;
-    const currentScore = parseInt(currentScoreText);
-    console.log(currentScore);
-    // 2.increase the score by
-    const newScore = currentScore + 1;
-    // 3.show the update score
-    currentScoreElement.innerText = newScore;
+    // const currentScoreElement = document.getElementById("current-score");
+    // const currentScoreText = currentScoreElement.innerText;
+    // const currentScore = parseInt(currentScoreText);
+    // console.log(currentScore);
+    // // 2.increase the score by
+    // const newScore = currentScore + 1;
+    // // 3.show the update score
+    // currentScoreElement.innerText = newScore;
     // start new round
     removeBackgroundColorById(expectedAlphabet);
     contiuneGame();
   } else {
     console.log("you missed. you lost a life");
     // step-1 : get the current lfe number
-    const currentLifeElement = document.getElementById("current-life");
-    const currentLifeText = currentLifeElement.innerText;
-    const currentLife = parseInt(currentLifeText);
-    // step-2: reduce the life count
-    const newLife = currentLife - 1;
+    //  const currentLifeElement = document.getElementById("current-life");
+    //   const currentLifeText = currentLifeElement.innerText;
+    //   const currentLife = parseInt(currentLifeText);
+    //   // step-2: reduce the life count
+    //   const newLife = currentLife - 1;
 
-    // step-3 : display the updated life count
-    currentLifeElement.innerText = newLife;
+    //   // step-3 : display the updated life count
+    //   currentLifeElement.innerText = newLife;
   }
 }
 // capture keyboard key pressed
