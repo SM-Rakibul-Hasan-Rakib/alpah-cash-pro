@@ -46,6 +46,14 @@ function handleKeyboardKeyUpEvent(event) {
     contiuneGame();
   } else {
     console.log("you missed. you lost a life");
+    const currentLife = getTextElementValueById("current-life");
+    const updatedLife = currentLife - 1;
+    setTextElementValueByID("current-life", updatedLife);
+
+    if (updatedLife === 0) {
+      gameOver();
+    }
+    // ------------------------------------------------------------------
     // step-1 : get the current lfe number
     //  const currentLifeElement = document.getElementById("current-life");
     //   const currentLifeText = currentLifeElement.innerText;
@@ -79,4 +87,8 @@ function play() {
   hideElementById("home-screen");
   showElementById("play-ground");
   contiuneGame();
+}
+function gameOver() {
+  hideElementById("play-ground");
+  showElementById("final-score");
 }
