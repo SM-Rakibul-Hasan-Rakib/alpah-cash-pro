@@ -91,9 +91,15 @@ function play() {
 
   // reset score and life
   setTextElementValueByID("current-life", 5);
+  setTextElementValueByID("current-score", 0);
   contiuneGame();
 }
 function gameOver() {
   hideElementById("play-ground");
   showElementById("final-score");
+  // update game-score
+  // 1.get the final score
+  const lastScore = getElementById("current-score");
+  console.log(lastScore);
+  setTextElementValueByID("last-score", lastScore);
 }
