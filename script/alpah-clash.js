@@ -84,8 +84,13 @@ function contiuneGame() {
 }
 
 function play() {
+  // hide everything show only the playground
   hideElementById("home-screen");
+  hideElementById("final-score");
   showElementById("play-ground");
+
+  // reset score and life
+  setTextElementValueByID("current-life", 5);
   contiuneGame();
 }
 function gameOver() {
