@@ -9,11 +9,9 @@ function showElementById(elementId) {
 }
 
 function setBackgroundById(elementId) {
-  const element = document.getElementById("elementId");
-  element.classList.add("bg-orange-400");
+  const element = document.getElementById(elementId);
   element.classList.add("bg-orange-400");
 }
-
 function getRandomAlphbate() {
   const alphbaetString = "abcdefghikjlmnopqrstuvwxyz";
   const alphbates = alphbaetString.split("");
