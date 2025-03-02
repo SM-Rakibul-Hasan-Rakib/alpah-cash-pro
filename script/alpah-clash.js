@@ -9,6 +9,17 @@
 //   // console.log(playgroundSection.classList);
 //   playgroundSection.classList.remove("hidden");
 // }
+function handleKeyboardKeyUpEvent(event) {
+  const playerPressed = event.key;
+  console.log("player pressed", playerPressed);
+  // get the expected to press
+  const currentAlphabetElement = document.getElementById("current-alphabet");
+  const currentAlphabet = currentAlphabetElement.innerText;
+  const expectedAlphabet = currentAlphabet.toLocaleLowerCase();
+  console.log(playerPressed, currentAlphabet);
+}
+// capture keyboard key pressed
+document.addEventListener("keyup", handleKeyboardKeyUpEvent);
 
 function contiuneGame() {
   // step-1: generate a random alphbaet
