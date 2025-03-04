@@ -13,6 +13,8 @@ const audio = new Audio();
 
 let isGamePlanOn = false;
 
+const artBoard = document.getElementById("art-board");
+
 function handleKeyboardKeyUpEvent(event) {
   if (isGamePlanOn == false) return;
   const playerPressed = event.key;
@@ -61,8 +63,15 @@ function handleKeyboardKeyUpEvent(event) {
     console.log("you missed. you lost a life");
     audio.src = "../audio/wrong.wav";
     audio.play();
+
     const currentLife = getTextElementValueById("current-life");
     const updatedLife = currentLife - 1;
+
+    const updatedLifePercentage = (updatedLife / 5) * 100;
+    // console.log(updatedLifePercentage);
+
+    artBoard.style.background = `linear-gradient(#FFFFFFB3 ${updatedLifePercentage}%,red)`;
+
     setTextElementValueByID("current-life", updatedLife);
 
     if (updatedLife === 0) {
@@ -125,4 +134,5 @@ function gameOver() {
   // console.log(currentAlphabet);
   removeBackgroundColorById(currentAlphabet);
   isGamePlanOn = false;
+  artBoard.style.background = "linear-gradient(#FFFFFFB3 100%,red)";
 }
