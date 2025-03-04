@@ -9,7 +9,12 @@
 //   // console.log(playgroundSection.classList);
 //   playgroundSection.classList.remove("hidden");
 // }
+const audio = new Audio();
+
+let isGamePlanOn = false;
+
 function handleKeyboardKeyUpEvent(event) {
+  if (isGamePlanOn == false) return;
   const playerPressed = event.key;
   // console.log("player pressed", playerPressed);
   console.log("player pressed", playerPressed);
@@ -27,7 +32,9 @@ function handleKeyboardKeyUpEvent(event) {
   // check matched right or not
   if (playerPressed === expectedAlphabet) {
     console.log("you get a point");
-    console.log("you have pressed correctly", expectedAlphabet);
+    audio.src = "../audio/success.wav";
+    audio.play();
+    // console.log("you have pressed correctly", expectedAlphabet);
 
     const currentScore = getTextElementValueById("current-score");
     // console.log(currentScore);
@@ -52,6 +59,8 @@ function handleKeyboardKeyUpEvent(event) {
     contiuneGame();
   } else {
     console.log("you missed. you lost a life");
+    audio.src = "../audio/wrong.wav";
+    audio.play();
     const currentLife = getTextElementValueById("current-life");
     const updatedLife = currentLife - 1;
     setTextElementValueByID("current-life", updatedLife);
@@ -98,6 +107,9 @@ function play() {
   // reset score and life
   setTextElementValueByID("current-life", 5);
   setTextElementValueByID("current-score", 0);
+
+  isGamePlanOn = true;
+
   contiuneGame();
 }
 function gameOver() {
@@ -112,4 +124,5 @@ function gameOver() {
   const currentAlphabet = getElementTextById("current-alphabet");
   // console.log(currentAlphabet);
   removeBackgroundColorById(currentAlphabet);
+  isGamePlanOn = false;
 }
