@@ -99,7 +99,7 @@ function gameOver() {
   showElementById("final-score");
   // update game-score
   // 1.get the final score
-  const lastScore = getElementById("current-score");
+  const lastScore = getTextElementValueById("current-score");
   console.log(lastScore);
   setTextElementValueByID("last-score", lastScore);
 }
