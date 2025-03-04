@@ -102,4 +102,8 @@ function gameOver() {
   const lastScore = getTextElementValueById("current-score");
   console.log(lastScore);
   setTextElementValueByID("last-score", lastScore);
+  // clear the last element
+  const currentAlphabet = getElementTextById("current-alphabet");
+  // console.log(currentAlphabet);
+  removeBackgroundColorById(currentAlphabet);
 }
