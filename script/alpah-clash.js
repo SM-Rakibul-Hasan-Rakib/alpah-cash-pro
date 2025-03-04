@@ -15,6 +15,8 @@ let isGamePlanOn = false;
 
 const artBoard = document.getElementById("art-board");
 
+const modalBox = document.getElementById("modal-box");
+
 function handleKeyboardKeyUpEvent(event) {
   if (isGamePlanOn == false) return;
   const playerPressed = event.key;
@@ -136,3 +138,14 @@ function gameOver() {
   isGamePlanOn = false;
   artBoard.style.background = "linear-gradient(#FFFFFFB3 100%,red)";
 }
+
+// function modalOpen(event) {
+//   if (event.clientY < 20) {
+//     modalBox.style.display = "flex";
+//   }
+// }
+
+// function modalClose() {
+//   modalBox.style.display = "none";
+// }
+// document.body.onmousemove = modalOpen;
